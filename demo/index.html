@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript"  src="/src/i18nt.js"></script>
+  </head>
+  <body >
+    <p data-i18nd="HELLO">default content</p>
+    <p data-i18nd="MARKETING_SPIN">is</p>
+    <p data-i18nd="MARKETING_KICK">irrelevant</p>
+    <p data-i18nd="SOLUTION">...mostly....</p>
+    <input data-i18nd="BTN_SR" type="button" value="Serbian" onclick="i18nt.switchLanguage('sr')" />
+    <input data-i18nd="BTN_EN" type="button" value="English" onclick="i18nt.switchLanguage('en')" />
+    <script type="text/javascript">
+      let translations = {
+        sr:{
+          HELLO:"Pozdrav, dobrodosli na kul sajt!",
+          MARKETING_SPIN:"Da li vam je ikada zatrebao prevod na jednoj stranici? Bez 2-3-984 html fajla?",
+          MARKETING_KICK:"Ne zelite da generisete prevode iz XML-a sa pythonom u odvojene HTML fajlove?",
+          SOLUTION:"Imamo pravo rjesenje za vas!",
+          BTN_SR:{content:"Srpski", target:"value"},
+          BTN_EN:{content:"Engleski", target:"value"}
+        },
+        en:{
+          HELLO:"Hello, wellcome to our cool website!",
+          MARKETING_SPIN:"Have you ever been in need of single index file localization? Without creating 2-3-415 html files?",
+          MARKETING_KICK:"You don't want to generate translated files from XML using Python into separate HTML files?",
+          SOLUTION:"We've got the right solution for you!",
+          BTN_SR: i18nt.specialElement("Serbian", "value"),
+          BTN_EN: i18nt.specialElement("English","value")
+        }
+      };
+      i18nt.init({translations,
+        defaultLanguage:'en',
+        manager: i18ntManagers.cookies});
+        i18nt.translate();
+    </script>
+  </body>
+</html>
