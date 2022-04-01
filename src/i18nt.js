@@ -29,7 +29,7 @@ const i18nt = (() => {
     let elements = document.querySelectorAll("[data-i18nd]");
 
     for (let element of elements) {
-      let label = element.getAttribute("data-i18nd");
+      let label = element.getAttribute("data-i18ned");
       let translation = _translations[language][label];
       if (translation) {
         if (typeof translation === "string") element.innerText = translation;
@@ -120,4 +120,3 @@ const i18ntManagers = {
 
 Object.freeze(i18ntManagers);
 
-document.addEventListener('readystatechange', i18nt.translate);

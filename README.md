@@ -8,11 +8,11 @@ Tiny Javascript library which can be used to translate simple plain HTML website
 
 Your target elements would preferably be elements where target text is just a bunch of text, no fancy hyperlinks in the middle of the sentence, no special formatting and such. Not to say that it can only translate `innerText` properties, more on that later. So, let's get to how-to:
 
-You should define additional property on your elements. The property is `data-i18nd` and it should be set to the label you wish to use for your text, for example
+You should define additional property on your elements. The property is `data-i18ned` and it should be set to the label you wish to use for your text, for example
 
 ```html
 <div id="footer">
-  <p class="classes..." data-i18nd="COPYRIGHT">Default text here</p>
+  <p class="classes..." data-i18ned="COPYRIGHT">Default text here</p>
 </div>
 ```
 
