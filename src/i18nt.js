@@ -26,7 +26,7 @@ const i18nt = (() => {
     if (document.readyState !== "complete" || !_translations) return;
     let language = _manager.extractor() || _default_language;
     if (!language) return;
-    let elements = document.querySelectorAll("[data-i18nd]");
+    let elements = document.querySelectorAll("[data-i18ned]");
 
     for (let element of elements) {
       let label = element.getAttribute("data-i18ned");
