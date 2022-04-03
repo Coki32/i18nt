@@ -23,7 +23,7 @@ const i18nt = (() => {
    * @returns void
    */
   function i18nt_translate() {
-    if (document.readyState !== "complete" || !_translations) return;
+    if (!_translations) return;
     let language = _manager.extractor() || _default_language;
     if (!language) return;
     let elements = document.querySelectorAll("[data-i18ned]");
@@ -90,7 +90,7 @@ const i18nt = (() => {
 })();
 
 /**
- * @type {{cookies:i18ntManager}}
+ * @type {{cookies:i18ntManager,localStorage:i18ntManager}}
  */
 const i18ntManagers = {
   cookies: {
@@ -114,6 +114,14 @@ const i18ntManagers = {
         }
       }
       document.cookie = split.join("; ");
+    },
+  },
+  localStorage:{
+    extractor: ()=>{
+      return localStorage.getItem('language');
+    },
+    setter: (language) =>{
+      localStorage.setItem('language',language);
     },
   },
 };

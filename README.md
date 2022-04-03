@@ -55,6 +55,8 @@ I know it didn't save you much typing, but it lets me forget what I used interna
 
 Thank you for reading this, the readme has more text than the js file has code. This is a quick and easy solution and it's far from perfect.
 
+Your document _should_ be ready when you call ```.translate()```, you could set it as ```readystatechange``` listener or just call it when you're ready. It won't check if the document is ready, it will translate the tags that it finds.
+
 ## License
 
 MIT Licensed.
